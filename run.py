@@ -295,3 +295,10 @@ for i in range(num_games):
         player_losses += 1
     elif result == 'draw':
         draws += 1
+
+#display game results
+print(f'Player wins: {player_wins}')
+print(f'Player losses: {player_losses}')
+print(f'Dealer wins: {dealer_wins}')
+print(f'Dealer losses: {dealer_losses}')
+print(f'draws: {draws}')
