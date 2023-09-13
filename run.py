@@ -196,6 +196,7 @@ def game():
         play_again()
         exit()
     elif choice == 'q':
+        print("goodbye")
         exit()
     else:
         print("Invalid input. Please enter H, S, or Q.")
