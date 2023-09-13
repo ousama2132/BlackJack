@@ -348,3 +348,6 @@ ax2.pie(sizes, explode=explode, labels=labels, colors=colors,
         autopct='%1.1f%%', shadow=True, startangle=90)
 ax2.axis('equal')
 ax2.set_title('Game Outcomes')
+
+#show plot points 
+plt.show()
