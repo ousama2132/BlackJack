@@ -26,3 +26,12 @@ while True:
         break
     except ValueError:
         print("Invalid input. Please enter an integer.")
+
+# Define a deck
+deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] 
+
+
+wins = 0
+losses = 0
+wins2 = 0
+losses2 = 0
