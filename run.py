@@ -47,3 +47,17 @@ def deal(deck):
     if card == 14: card = "A"
     hand.append(card)
   return hand
+
+# Play again function
+def play_again():
+  again = input("Do you want to play again? (Y/N) : ").lower()
+  if again == "y":
+    dealer_hand = []
+    player_hand = []
+    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] * 4
+    game()
+  elif again == "n":
+    print("Bye")
+    exit()    
+  else:
+    print("invalid input")
