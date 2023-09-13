@@ -231,3 +231,35 @@ elif PvC == 'n':
         exit()
     else:
         print('Invalid input. Please enter Y or N.')
+
+# Function for computer to play game
+def play_game(num_decks=1):
+    deck = card_values * 4 * num_decks  
+    random.shuffle(deck)  
+    player_hand = [deck.pop(), deck.pop()]  
+    dealer_hand = [deck.pop(), deck.pop()]  
+
+    
+    while sum_card_values(player_hand) < 18:
+        player_hand.append(deck.pop())
+
+    
+    while sum_card_values(dealer_hand) < 17:
+        dealer_hand.append(deck.pop())
+
+    player_total = sum_card_values(player_hand)  
+    dealer_total = sum_card_values(dealer_hand)  
+
+
+    if player_total > 21:
+        result = 'Dealer wins'
+    elif dealer_total > 21:
+        result = 'Player wins'
+    elif player_total > dealer_total:
+        result = 'Player wins'
+    elif dealer_total > player_total:
+        result = 'Dealer wins'
+    else:
+        result = 'draw'
+
+    return result  
