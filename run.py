@@ -263,3 +263,21 @@ def play_game(num_decks=1):
         result = 'draw'
 
     return result  
+
+# calculate value of cards
+def sum_card_values(hand):
+      sum = 0
+      num_aces = 0
+      for value in hand:
+          if value == 'A':
+              num_aces += 1
+          elif value in ['K', 'Q', 'J']:
+              sum += 10
+          else:
+              sum += int(value)
+      for _ in range(num_aces):
+          if sum + 11 > 21:
+              sum += 1
+          else:
+              sum += 11
+      return sum
