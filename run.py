@@ -98,3 +98,22 @@ def print_results(dealer_hand, player_hand):
         str(total(dealer_hand)))
   print("You have a " + str(player_hand) + " for a total of " +
         str(total(player_hand)))
+
+# Checking for blackjack
+def blackjack(dealer_hand, player_hand):
+  global wins
+  global losses
+  if total(player_hand) == 21:
+    print_results(dealer_hand, player_hand)
+    print("Congratulations! You got a Blackjack!\n")
+    wins += 1
+    print("losses", losses)
+    print("wins", wins)
+    play_again()
+  elif total(dealer_hand) == 21:
+    print_results(dealer_hand, player_hand)
+    print("Sorry, you lose. The dealer got a blackjack.\n")
+    losses += 1
+    play_again()
+    print("losses", losses)
+    print("wins", wins)
