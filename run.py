@@ -211,3 +211,23 @@ while True:
       break
   else:
      print('Invalid input. Please enter Y or N.')
+
+if PvC == 'y':
+    dealer_hand = []
+    player_hand = []
+    game()
+elif PvC == 'n':
+    while True:
+        CvC = input("Do you want to play CvC? (Y/N): ").lower()
+        if CvC == 'y' or CvC == 'n':
+            break
+        else:
+            print('Invalid input. Please enter Y or N.')
+    if CvC == 'y':
+        num_games = int(input("How many games would you like to play? "))
+        card_values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    elif CvC == 'n':
+        print('Okay goodbye')
+        exit()
+    else:
+        print('Invalid input. Please enter Y or N.')
