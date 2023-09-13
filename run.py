@@ -117,3 +117,44 @@ def blackjack(dealer_hand, player_hand):
     play_again()
     print("losses", losses)
     print("wins", wins)
+
+# score options
+def score(dealer_hand, player_hand):
+  global wins
+  global losses
+  if total(player_hand) == 21:
+    print_results(dealer_hand, player_hand)
+    print("Congratulations! You got a Blackjack!\n")
+    wins += 1
+    print("losses", losses)
+    print("wins", wins)
+  elif total(dealer_hand) == 21:
+    print_results(dealer_hand, player_hand)
+    print("Sorry, you lose. The dealer got a blackjack.\n")
+    losses += 1
+    print("losses", losses)
+    print("wins", wins)
+  elif total(player_hand) > 21:
+    print_results(dealer_hand, player_hand)
+    print("Sorry. You busted. You lose.\n")
+    losses += 1
+    print("losses", losses)
+    print("wins", wins)
+  elif total(dealer_hand) > 21:
+    print_results(dealer_hand, player_hand)
+    print("Dealer busts. You win!\n")
+    wins += 1
+    print("losses", losses)
+    print("wins", wins)
+  elif total(player_hand) < total(dealer_hand):
+    print_results(dealer_hand, player_hand)
+    print("Sorry. Your score isn't higher than the dealer. You lose.\n")
+    losses += 1
+    print("losses", losses)
+    print("wins", wins)
+  elif total(player_hand) > total(dealer_hand):
+    print_results(dealer_hand, player_hand)
+    print("Congratulations. Your score is higher than the dealer. You win\n")
+    wins += 1
+    print("losses", losses)
+    print("wins", wins)
