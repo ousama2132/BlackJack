@@ -83,3 +83,10 @@ def hit(hand):
   if card == 14: card = "A"
   hand.append(card)
   return hand
+
+# Function to clear console
+def clear():
+  if os.name == 'nt':
+    os.system('CLS')
+  if os.name == 'posix':
+    os.system('clear')
