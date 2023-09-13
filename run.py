@@ -14,3 +14,6 @@ import os
 import random
 import csv
 import matplotlib.pyplot as plt
+
+# Print the game logo
+print(logo)
