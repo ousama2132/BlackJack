@@ -158,3 +158,44 @@ def score(dealer_hand, player_hand):
     wins += 1
     print("losses", losses)
     print("wins", wins)
+
+# combines functions
+def game():
+  global wins
+  global losses
+  clear()
+  dealer_hand = deal(deck)
+  player_hand = deal(deck)
+  print("The dealer is showing a " + str(dealer_hand[0]))
+  print("You have a " + str(player_hand) + " for a total of " +
+        str(total(player_hand)))
+  blackjack(dealer_hand, player_hand)
+  while True:
+    choice = input("Do you want to [H]it, [S]tand, or [Q]uit: ").lower()
+    if choice == 'h':
+        hit(player_hand)
+        print(player_hand)
+        print("Hand total: " + str(total(player_hand)))
+        if total(player_hand) > 21:
+            print('You busted')
+            losses += 1
+            print("losses", losses)
+            print("wins", wins)
+            play_again()
+    elif choice == 's':
+        while total(dealer_hand) <= 17:
+            hit(dealer_hand)
+            print(dealer_hand)
+            if total(dealer_hand) > 21:
+                print('Dealer busts, you win!')
+                wins += 1
+                print("losses", losses)
+                print("wins", wins)
+                play_again()
+        score(dealer_hand, player_hand)
+        play_again()
+        exit()
+    elif choice == 'q':
+        exit()
+    else:
+        print("Invalid input. Please enter H, S, or Q.")
