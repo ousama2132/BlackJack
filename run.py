@@ -17,3 +17,12 @@ import matplotlib.pyplot as plt
 
 # Print the game logo
 print(logo)
+
+# Take input for the number of decks to use in the game
+while True:
+    decks_input = input("Enter number of decks: ")
+    try:
+        decks = int(decks_input)
+        break
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
