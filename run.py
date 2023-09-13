@@ -315,3 +315,13 @@ with open(new_file, 'r') as file:
     data = [row for row in reader]
 
 data.pop(0)
+
+# take data from csv
+player_wins = [int(row[1]) for row in data]
+player_losses = [int(row[2]) for row in data]
+dealer_wins = [int(row[3]) for row in data]
+dealer_losses = [int(row[4]) for row in data]
+draws = []
+for row in data:
+    if len(row) >= 6:
+        draws.append(int(row[5]))
