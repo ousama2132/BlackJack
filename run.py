@@ -73,3 +73,13 @@ def total(hand):
       else: total += 11
     else: total += card
   return total
+
+# Function to hit
+def hit(hand):
+  card = deck.pop()
+  if card == 11: card = "J"
+  if card == 12: card = "Q"
+  if card == 13: card = "K"
+  if card == 14: card = "A"
+  hand.append(card)
+  return hand
