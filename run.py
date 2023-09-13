@@ -1,3 +1,10 @@
+# Import required modules
+import os
+import random
+import csv
+import matplotlib.pyplot as plt
+
+
 # ASCII Art
 logo = """
 .------.            _     _            _    _            _    
@@ -9,11 +16,6 @@ logo = """
       |  \/ K|                            _/ |                
       `------'                           |__/           
 """
-# Import required modules
-import os
-import random
-import csv
-import matplotlib.pyplot as plt
 
 # Print the game logo
 print(logo)
