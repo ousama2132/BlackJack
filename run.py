@@ -302,3 +302,16 @@ print(f'Player losses: {player_losses}')
 print(f'Dealer wins: {dealer_wins}')
 print(f'Dealer losses: {dealer_losses}')
 print(f'draws: {draws}')
+
+new_file = 'new.csv'
+new_data = [("players wins", player_wins),("player losses", player_losses), ("dealer wins", dealer_wins),("dealer losses", dealer_losses),("draws", draws)]
+
+# read results
+with open(new_file, 'a', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow([i+1, player_wins, player_losses, dealer_wins, dealer_losses,draws])
+with open(new_file, 'r') as file:
+    reader = csv.reader(file)
+    data = [row for row in reader]
+
+data.pop(0)
