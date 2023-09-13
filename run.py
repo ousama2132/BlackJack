@@ -325,3 +325,26 @@ draws = []
 for row in data:
     if len(row) >= 6:
         draws.append(int(row[5]))
+
+# display data using pie and bar chart
+fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+barlabels = ['Player Wins', 'Player Losses', 'Dealer Wins', 'Dealer Losses']
+barvalues = [sum(player_wins), sum(player_losses), sum(dealer_wins), sum(dealer_losses)]
+ax1.bar(barlabels, barvalues)
+ax1.set_title('Total Results')
+x = [row[0] for row in data]
+y = [int(row[1]) - int(row[2]) for row in data] 
+total_games = sum(barvalues) + sum(draws)
+player_win_pct = sum(player_wins) / total_games * 100
+player_loss_pct = sum(player_losses) / total_games * 100
+dealer_win_pct = sum(dealer_wins) / total_games * 100
+dealer_loss_pct = sum(dealer_losses) / total_games * 100
+draw_pct = sum(draws) / total_games * 100
+labels = ['Player Wins', 'Player Losses', 'Dealer Wins', 'Dealer Losses', 'Draws']
+sizes = [player_win_pct, player_loss_pct, dealer_win_pct, dealer_loss_pct, draw_pct]
+colors = ['green', 'red', 'blue', 'orange', 'gray']
+explode = (0.1, 0.1, 0.1, 0.1, 0.1)
+ax2.pie(sizes, explode=explode, labels=labels, colors=colors,
+        autopct='%1.1f%%', shadow=True, startangle=90)
+ax2.axis('equal')
+ax2.set_title('Game Outcomes')
