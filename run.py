@@ -199,3 +199,15 @@ def game():
         exit()
     else:
         print("Invalid input. Please enter H, S, or Q.")
+
+
+#----------------------------------- computer 
+
+
+# Asking which mode user wants
+while True:
+  PvC= input("Do you want to play PvC? (Y/N) : ").lower()
+  if PvC == 'y' or PvC == 'n':
+      break
+  else:
+     print('Invalid input. Please enter Y or N.')
