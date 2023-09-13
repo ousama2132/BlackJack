@@ -281,3 +281,17 @@ def sum_card_values(hand):
           else:
               sum += 11
       return sum
+
+# Playing the game for number of times that is stated 
+player_wins = dealer_wins = draws = player_losses = dealer_losses = draws = 0
+
+for i in range(num_games):
+    result = play_game()
+    if result == 'Player wins':
+        player_wins += 1
+        dealer_losses += 1
+    elif result == 'Dealer wins':
+        dealer_wins += 1
+        player_losses += 1
+    elif result == 'draw':
+        draws += 1
