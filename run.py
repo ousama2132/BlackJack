@@ -90,3 +90,11 @@ def clear():
     os.system('CLS')
   if os.name == 'posix':
     os.system('clear')
+
+# print results function
+def print_results(dealer_hand, player_hand):
+  clear()
+  print("The dealer has a " + str(dealer_hand) + " for a total of " +
+        str(total(dealer_hand)))
+  print("You have a " + str(player_hand) + " for a total of " +
+        str(total(player_hand)))
